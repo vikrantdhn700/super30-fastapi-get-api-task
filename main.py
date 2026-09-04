@@ -105,7 +105,7 @@ def multiply_numbers(number1: int, number2: int):
 @app.get("/square/{number}")
 def square_number(number: int):
     result = number * number
-    return {"result": result}
+    return {"number": number, "result": result}
 
 
 """ Even or Odd API endpoint """
@@ -114,9 +114,9 @@ def square_number(number: int):
 @app.get("/check/{number}")
 def even_odd_number(number: int):
     if number % 2 == 0:
-        return {"result": "even"}
+        return {"number": number, "type": "even"}
     else:
-        return {"result": "odd"}
+        return {"number": number, "type": "odd"}
 
 
 """ Age API endpoint """
@@ -125,15 +125,15 @@ def even_odd_number(number: int):
 @app.get("/age/{age}")
 def check_age(age: int):
     if age >= 4 and age <= 12:
-        return {"result": "Child"}
+        return {"age": age, "message": "You are a child"}
     elif age >= 13 and age <= 19:
-        return {"result": "Teenager"}
+        return {"age": age, "message": "You are a teenager"}
     elif age >= 20 and age <= 59:
-        return {"result": "Adult"}
+        return {"age": age, "message": "You are an adult"}
     elif age >= 60:
-        return {"result": "Senior Citizen"}
+        return {"age": age, "message": "You are a senior citizen"}
     else:
-        return {"result": "Kids"}
+        return {"age": age, "message": "You are a kid"}
 
 
 """ Multiplication Table API endpoint """
