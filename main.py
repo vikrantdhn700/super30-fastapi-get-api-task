@@ -65,7 +65,7 @@ def get_course():
 """ Skills API endpoint """
 
 
-@app.get('/skill/')
+@app.get('/skills/')
 def get_skill():
     return {
         "skills": [
